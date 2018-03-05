@@ -12,5 +12,6 @@
 Плюс: разобраться с основами веб-разработки, как сервлеты, и написать простое приложение с их использованием.
 
 источник: 
-1 https://javarush.ru/groups/posts/520-vashe-pervoe-prilozhenie-na-hibernate
-2 https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov
+1. https://javarush.ru/groups/posts/520-vashe-pervoe-prilozhenie-na-hibernate
+
+2. https://javarush.ru/groups/posts/523-vashe-pervoe-prilozhenie-s-ispoljhzovaniem-java-servletov
