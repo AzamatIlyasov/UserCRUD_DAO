@@ -13,10 +13,10 @@ public class Auto {
 
     @Column (name = "model")
     private String model;
-
+    @Column (name = "color")
     private String color;
 
-    @ManyToMany (fetch = FetchType.LAZY)
+    @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "user_id")
     private User user;
 

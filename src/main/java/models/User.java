@@ -15,6 +15,7 @@ public class User {
     @Column (name = "name")
     private String name;
 
+    @Column (name = "age")
     private int age;
 
     @OneToMany (mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -26,7 +27,7 @@ public class User {
     public User(String name, int age) {
         this.name = name;
         this.age = age;
-        autos = new ArrayList<Auto>();
+        autos = new ArrayList<>();
     }
 
     public void addAuto(Auto auto) {

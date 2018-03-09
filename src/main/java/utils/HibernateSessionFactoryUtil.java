@@ -1,10 +1,8 @@
 package utils;
 
-
 import models.Auto;
 import models.User;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
@@ -22,8 +20,9 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Auto.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
+
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("Исключение! " + e);
             }
         }
         return sessionFactory;

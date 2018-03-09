@@ -8,33 +8,33 @@ import java.util.List;
 
 public class UserService {
 
-    private UserDAO userDAO = new UserDAO();
+    private UserDAO usersDAO = new UserDAO();
 
     public UserService() {
     }
 
     public User findUser(int id) {
-        return userDAO.findById(id);
+        return usersDAO.findById(id);
     }
 
     public void saveUser (User user) {
-        userDAO.save(user);
+        usersDAO.save(user);
     }
 
     public void updateUser (User user) {
-        userDAO.update(user);
+        usersDAO.update(user);
     }
 
     public void deleteUser (User user) {
-        userDAO.delete(user);
+        usersDAO.delete(user);
     }
 
     public List<User> findAllUsers() {
-        return userDAO.findAll();
+        return usersDAO.findAll();
     }
 
     public Auto findAutoById(int id) {
-        return userDAO.findAutoById(id);
+        return usersDAO.findAutoById(id);
     }
 
 }
