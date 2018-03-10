@@ -4,5 +4,41 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
+    <!-- Users -->
+    <servlet>
+        <servlet-name>UserSimpleServlet</servlet-name>
+        <servlet-class>servlets.UserSimpleServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UserSimpleServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- Autos -->
+    <servlet>
+        <servlet-name>AutoSimpleServlet</servlet-name>
+        <servlet-class>servlets.AutoSimpleServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AutoSimpleServlet</servlet-name>
+        <url-pattern>/autos</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <servlet-name>UserSimpleServlet</servlet-name>
+        <!-- <servlet-name>AutoSimpleServlet</servlet-name> -->
+    </filter-mapping>
+    
 </web-app>

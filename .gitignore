@@ -3,6 +3,7 @@
 
 #дирректории
 /.idea/*
+/out/*
 /target/*
 /src/main/java/META-INF/*
 
