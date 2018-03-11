@@ -1,51 +1,47 @@
 package dao;
 
-
 import models.Auto;
 import models.User;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import utils.HibernateSessionFactoryUtil;
-
+import utils.HibernateUtil;
+import javax.persistence.EntityManager;
 import java.util.List;
 
 public class UserDAO {
 
     public User findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
+        return HibernateUtil.getEm().find(User.class, id);
     }
 
     public void save(User user) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.save(user);
-        tx1.commit();
-        session.close();
+        EntityManager em = HibernateUtil.getEm();
+        em.getTransaction().begin();
+        em.persist(user);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public void update(User user) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.update(user);
-        tx1.commit();
-        session.close();
+        EntityManager em = HibernateUtil.getEm();
+        em.getTransaction().begin();
+        em.merge(user);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public void delete(User user) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.delete(user);
-        tx1.commit();
-        session.close();
+        EntityManager em = HibernateUtil.getEm();
+        em.getTransaction().begin();
+        em.remove(user);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public Auto findAutoById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
+        return HibernateUtil.getEm().find(Auto.class, id);
     }
 
     public List<User> findAll() {
-        List<User> users = (List<User>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
-        return users;
+        return HibernateUtil.getEm().createQuery("from User").getResultList();
     }
 
 }

@@ -12,10 +12,7 @@ public class Main {
         Auto subaruXV = new Auto("Subaru XV", "white metallic");
         subaruXV.setUser(azaUser);
         azaUser.addAuto(subaruXV);
-        Auto subaruForrester = new Auto("Subaru Forrester", "Gray");
-        subaruForrester.setUser(azaUser);
-        azaUser.addAuto(subaruForrester);
-        userService.updateUser(azaUser);
+        System.out.println(userService.findAllUsers());
 
     }
 }

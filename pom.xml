@@ -18,6 +18,11 @@
         </plugins>
     </build>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <!-- PostgreSQL -->
         <dependency>
@@ -27,10 +32,17 @@
         </dependency>
 
         <!-- Hibernate -->
+        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core. Support @PersistenceContext -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.2.13.Final</version>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.2.14.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
         </dependency>
 
         <!-- For client-server app -->

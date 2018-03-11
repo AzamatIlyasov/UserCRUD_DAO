@@ -6,6 +6,7 @@
 /out/*
 /target/*
 /src/main/java/META-INF/*
+/META-INF/*
 
 #файлы
 *.iml
